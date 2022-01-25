@@ -7,7 +7,7 @@ Package license: Apache-2.0
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/bed-reader-feedstock/blob/master/LICENSE.txt)
 
-Summary: Read and write the PLINK BED format, simply, and efficiently.
+Summary: Read and write the PLINK BED format, simply and efficiently.
 
 Development: https://github.com/fastlmm/bed-reader
 
