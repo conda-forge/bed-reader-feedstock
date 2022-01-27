@@ -15,4 +15,4 @@ REM set UTF-8 mode by default
 chcp 65001
 set PYTHONUTF8=1
 set PYTHONIOENCODING="UTF-8"
-FOR %%w in (*.whl) DO %PYTHON% -m pip install %%w --editable tmpbuild_%PY_VER%
+FOR %%w in (*.whl) DO %PYTHON% -m pip install %%w --target %TEMP%
