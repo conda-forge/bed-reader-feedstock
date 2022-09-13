@@ -11,15 +11,21 @@ source:
   sha256: cf0fabe11dd8a1a98405ffcc91435a03ae0791b46a604c43d4e4c495e9e275c5
 
 build:
-  number: 1
+  number: 2
   skip: true  # [py<37]
 
 requirements:
   build:
     - {{ compiler('c') }}
-    - rust
     - maturin
-
+    # Support for osx_arm64 as recommended by
+    # https://conda-forge.org/blog/posts/2020-10-29-macos-arm64/#how-to-add-a-osx-arm64-build-to-a-feedstock
+    - {{ compiler('rust') }}
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - cython                                 # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
+    - pybind11                               # [build_platform != target_platform]
   host:
     - python
     - pip
