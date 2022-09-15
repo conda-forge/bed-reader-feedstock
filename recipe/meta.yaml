@@ -12,8 +12,7 @@ source:
 
 build:
   number: 1
-  # Disabling Windows builds 2022/01 because of obscure build system problems.01/2022
-  skip: true  # [py<37,win]
+  skip: true  # [py<37]
 
 requirements:
   build:
