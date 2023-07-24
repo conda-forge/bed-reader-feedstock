@@ -34,6 +34,7 @@ requirements:
     - pybind11
 
   run:
+    - python
     # Versions taken from pyproject.toml
     - numpy >=1.13.3
     - pandas >=0.25.1
