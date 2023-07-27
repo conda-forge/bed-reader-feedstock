@@ -11,27 +11,36 @@ source:
   sha256: 9bbbd28117deef3ca00ec67553bd5f8fa8bd19919f316cb77316e6230158cca4
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<37]
 
 requirements:
   build:
-    - {{ compiler('c') }}
-    - rust
-    - maturin
+    # Support for osx_arm64 as recommended by
+    # https://conda-forge.org/blog/posts/2020-10-29-macos-arm64/#how-to-add-a-osx-arm64-build-to-a-feedstock
+    - {{ compiler('rust') }}
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - cython                                 # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
+    - pybind11                               # [build_platform != target_platform]
+    - maturin >=0.14,<0.15                   # [build_platform != target_platform]
 
   host:
     - python
     - pip
-    - maturin
-    - toml
+    - maturin >=0.14,<0.15
+    - cython
+    - numpy
+    - pybind11
 
   run:
     - python
-    # Versions taken from requirements.txt
+    # Versions taken from pyproject.toml
     - numpy >=1.13.3
     - pandas >=0.25.1
-    - pooch >=1.1.1
+    - pooch >=1.4.0
+    - chardet >=5.1.0
 
 test:
   imports:
