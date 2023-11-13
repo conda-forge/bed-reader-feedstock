@@ -39,7 +39,9 @@ requirements:
     # Versions taken from pyproject.toml
     - numpy >=1.13.3
     - pooch >=1.5.0
-    - scipy >=1.4
+    # Note: leaving out scipy for 1.0 as it's only used in one optional feature.
+    # May be included as a default dependency in future releases.
+    # - scipy >=1.4
 
 test:
   imports:
