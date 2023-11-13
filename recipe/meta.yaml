@@ -1,5 +1,5 @@
 {% set name = "bed-reader" %}
-{% set version = "0.2.37" %}
+{% set version = "1.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 source:
   # Can't use the standard pattern because of the hypen/underscore remapping.
   url: https://pypi.io/packages/source/b/bed-reader/bed_reader-{{ version }}.tar.gz
-  sha256: 34057e06d8d2ed15e7fbdb6a9bf6b09a17f3b4740f5e0803b9a13a390bfeab98
+  sha256: fea2ef4562ca3211b6087185d8ff73e60b75915066c10d2d1b398ab87ece4ed9
 
 build:
   number: 0
@@ -38,9 +38,10 @@ requirements:
     - python
     # Versions taken from pyproject.toml
     - numpy >=1.13.3
-    - pandas >=0.25.1
-    - pooch >=1.4.0
-    - chardet >=5.1.0
+    - pooch >=1.5.0
+    # Note: leaving out scipy for 1.0 as it's only used in one optional feature.
+    # May be included as a default dependency in future releases.
+    # - scipy >=1.4
 
 test:
   imports:
