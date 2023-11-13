@@ -38,9 +38,8 @@ requirements:
     - python
     # Versions taken from pyproject.toml
     - numpy >=1.13.3
-    - pandas >=0.25.1
-    - pooch >=1.4.0
-    - chardet >=5.1.0
+    - pooch >=1.5.0
+    - scipy >=1.4
 
 test:
   imports:
