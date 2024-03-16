@@ -1,5 +1,5 @@
 {% set name = "bed-reader" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 source:
   # Can't use the standard pattern because of the hypen/underscore remapping.
   url: https://pypi.io/packages/source/b/bed-reader/bed_reader-{{ version }}.tar.gz
-  sha256: fea2ef4562ca3211b6087185d8ff73e60b75915066c10d2d1b398ab87ece4ed9
+  sha256: f7f862c642da3f8a64f0fcaa4564b314105a544496b156207eb1cdac655d3b6a
 
 build:
   number: 0
